@@ -5,9 +5,16 @@
 </head>
 <body>
 
-<h3>Selam</h3>
+<h3>ilanlar</h3>
 
-bu bizim ilk template response'umuz
+<ul>
+{% for advert in adverts %}
+    <li>{{ advert.region }} bölgesinde
+        {{ advert.pet_type.name }} bakabilecek
+        birini ariyorum. günlük {{ advert.price }}
+        vereceğim.</li>
+{% endfor %}
+</ul>
 
 </body>
 </html>
