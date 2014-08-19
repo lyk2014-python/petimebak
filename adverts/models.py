@@ -26,7 +26,7 @@ class Advert(models.Model):
     is_published = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return smart_unicode("%s -> %s " %(self.user.username, self.pet_type))
+        return smart_unicode("%s -> %s " %(self.user.username, self.pet_type.name))
 
     class Meta:
         verbose_name = "İlan"
