@@ -1,61 +1,30 @@
 {% extends "base.html" %}
+{% load gravatar %}
 
 {% block content %}
 <div id="request-list">
+    {% for advert in adverts %}
 
-            <div class="request-item">
+        <div class="request-item">
 
-                <div class="profile">
-                    <a href="#">
-                        <img src="http://www.gravatar.com/avatar/f4d5d0097f895d0bf18600014c698d18/?default=&s=100" alt=""/>
-                    </a>
-                </div>
-
-                <div class="summary">
-                    <h4>Fikirtepe'de köpek bakacak biri arıyorum</h4>
-                    <p>12 Eylül ve 16 Eylül tarihleri arasında günlük 100TL vereceğim.</p>
-                    <a href="#">@fthrkl</a>
-                </div>
-
+            <div class="profile">
+                <a href="#">
+                    <img src="{% gravatar_url advert.user.email 100 %}" alt=""/>
+                </a>
             </div>
 
-
-            <div class="request-item">
-
-                <div class="profile">
-                    <a href="#">
-                        <img src="http://www.gravatar.com/avatar/67a249ec35626d6a96ee36cd76c529a1/?default=&s=100" alt=""/>
-                    </a>
-                </div>
-
-                <div class="summary">
-                    <h4>Kadıköy'da kaplumbağa bakacak biri arıyorum</h4>
-                    <p>12 Eylül ve 16 Eylül tarihleri arasında günlük 500TL vereceğim.</p>
-                    <a href="#">@halitalptekin</a>
-                </div>
-
+            <div class="summary">
+                <h4>{{ advert.region }}'de {{ advert.pet_type.name }} bakacak biri arıyorum</h4>
+                <p>{{ advert.start_date|date:"j F" }} ve {{ advert.end_date|date:"j F" }} tarihleri arasında günlük {{ advert.price }} TL vereceğim.</p>
+                <a href="#">@{{ advert.user.username }}</a>
             </div>
 
-
-            <div class="request-item">
-
-                <div class="profile">
-                    <a href="#">
-                        <img src="http://www.gravatar.com/avatar/e70aa173a95f239ee3aa4768b441cb83/?default=&s=100" alt=""/>
-                    </a>
-                </div>
-
-                <div class="summary">
-                    <h4>Bebek bölgesinde at bakacak biri arıyorum</h4>
-                    <p>12 Eylül ve 16 Eylül tarihleri arasında günlük 100TL vereceğim.</p>
-                    <a href="#">@yalniz_kovboy</a>
-                </div>
-
-            </div>
+        </div>
+    {% endfor %}
 
         </div>
 
         <div class="action-row">
-            <a href="#" class="large-button">Yeni İlan Gönder</a>
+            <a href="{% url "new_advert" %}" class="large-button">Yeni İlan Gönder</a>
         </div>
 {% endblock %}
