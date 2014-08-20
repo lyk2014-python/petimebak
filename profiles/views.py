@@ -9,6 +9,8 @@ from profiles.forms import LoginForm
 
 def login(request):
     form = LoginForm()
+    error = False
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -18,13 +20,15 @@ def login(request):
             user = authenticate(username=username,
                                 password=password)
 
-            auth_login(request, user)
-
-            return redirect(reverse("home"))
-
+            if not user:
+                error = True
+            else:
+                auth_login(request, user)
+                return redirect(reverse("home"))
 
     return render_to_response("login.html", {
-        "form": form
+        "form": form,
+        "error": error
     }, RequestContext(request))
 
 
