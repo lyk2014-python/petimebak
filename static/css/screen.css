@@ -25,7 +25,6 @@ p {
 
 .content h3 {
     font-size: 30px;
-    font-weight: bold;
     color: #3d3f3e;
     font-weight: normal;
 }
@@ -101,10 +100,15 @@ form input[type='submit'] {
     font-size: 20px;
 }
 
-#request-list .request-item a {
-    color: gray;
+#request-list .request-item  a {
+    color:gray;
     font-size: 20px;
     text-decoration: none;
+}
+
+#request-list .request-item h4 a {
+    font-size: 27px;
+    color: #4d4d4d;
 }
 
 

@@ -5,17 +5,17 @@
 <div id="request-list">
     <div class="request-item">
 
-        <div class="profile">
-            <a href="#">
-                <img src="https://secure.gravatar.com/avatar/fd067e3b04ea33f7e6e4d4f334133159.jpg?s=100&amp;r=g&amp;d=mm" alt=""/>
-            </a>
-        </div>
+            <div class="profile">
+                <a href="#">
+                    <img src="{% gravatar_url advert.user.email 100 %}" alt=""/>
+                </a>
+            </div>
 
-        <div class="summary">
-            <h4>bolu'de cekirge bakacak biri arıyorum</h4>
-            <p>20 Ağustos ve 23 Ağustos tarihleri arasında günlük 500 TL vereceğim.</p>
-            <a href="#">@root</a>
-        </div>
+            <div class="summary">
+                <h4>{{ advert.region }}'de {{ advert.pet_type.name }} bakacak biri arıyorum</h4>
+                <p>{{ advert.start_date|date:"j F" }} ve {{ advert.end_date|date:"j F" }} tarihleri arasında günlük {{ advert.price }} TL vereceğim.</p>
+                <a href="#">@{{ advert.user.username }}</a>
+            </div>
 
     </div>
 

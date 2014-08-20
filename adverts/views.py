@@ -31,3 +31,9 @@ def new_advert(request):
         "form": form,
         "success": success,
     }, RequestContext(request))
+
+def detail_advert(request, pk):
+    advert = Advert.objects.get(id=pk)
+    return render_to_response("detail.html", {
+        "advert": advert,
+    }, RequestContext(request))

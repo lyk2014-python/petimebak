@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^register', 'profiles.views.register', name='register'),
 
     url(r'^new', 'adverts.views.new_advert', name='new_advert'),
+    url(r'^advert/(?P<pk>[\d]+)$', 'adverts.views.detail_advert', name='detail_advert'),
 
     # url(r'^blog/', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
