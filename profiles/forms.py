@@ -2,6 +2,7 @@
 
 from django import forms
 from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
 
@@ -25,3 +26,7 @@ class LoginForm(forms.Form):
             raise ValidationError("Yanlış kullanıcı adı veya şifre!")
 
         return self.cleaned_data
+
+
+class RegistrationForm(UserCreationForm):
+    pass

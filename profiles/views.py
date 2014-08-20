@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.contrib.auth import login as auth_login, logout as auth_logout
 
-from profiles.forms import LoginForm
+from profiles.forms import LoginForm, RegistrationForm
 
 
 def login(request):
@@ -24,3 +24,16 @@ def logout(request):
     auth_logout(request)
     return render_to_response("logout.html", {},
                               RequestContext(request))
+
+def register(request):
+    form = RegistrationForm()
+
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse("home"))
+
+    return render_to_response("register.html", {
+        "form": form
+    }, RequestContext(request))
