@@ -5,6 +5,12 @@
 </head>
 <body>
 
+{% if user.is_authenticated %}
+Selam {{ user }} <a href="{% url "logout" %}">logout</a>
+{% else %}
+<a href="{% url "login" %}">Login</a>
+{% endif %}
+
 <h3>ilanlar</h3>
 
 <ul>
