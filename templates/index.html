@@ -1,27 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Petimebak</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-{% if user.is_authenticated %}
-Selam {{ user }} <a href="{% url "logout" %}">logout</a>
-{% else %}
-<a href="{% url "login" %}">giriş yap</a> ya da
-<a href="{% url "register" %}">kayıt ol</a>
-{% endif %}
+{% block content %}
+<div id="request-list">
 
-<h3>ilanlar</h3>
+            <div class="request-item">
 
-<ul>
-{% for advert in adverts %}
-    <li>{{ advert.region }} bölgesinde
-        {{ advert.pet_type.name }} bakabilecek
-        birini ariyorum. günlük {{ advert.price }}
-        vereceğim.</li>
-{% endfor %}
-</ul>
+                <div class="profile">
+                    <a href="#">
+                        <img src="http://www.gravatar.com/avatar/f4d5d0097f895d0bf18600014c698d18/?default=&s=100" alt=""/>
+                    </a>
+                </div>
 
-</body>
-</html>
+                <div class="summary">
+                    <h4>Fikirtepe'de köpek bakacak biri arıyorum</h4>
+                    <p>12 Eylül ve 16 Eylül tarihleri arasında günlük 100TL vereceğim.</p>
+                    <a href="#">@fthrkl</a>
+                </div>
+
+            </div>
+
+
+            <div class="request-item">
+
+                <div class="profile">
+                    <a href="#">
+                        <img src="http://www.gravatar.com/avatar/67a249ec35626d6a96ee36cd76c529a1/?default=&s=100" alt=""/>
+                    </a>
+                </div>
+
+                <div class="summary">
+                    <h4>Kadıköy'da kaplumbağa bakacak biri arıyorum</h4>
+                    <p>12 Eylül ve 16 Eylül tarihleri arasında günlük 500TL vereceğim.</p>
+                    <a href="#">@halitalptekin</a>
+                </div>
+
+            </div>
+
+
+            <div class="request-item">
+
+                <div class="profile">
+                    <a href="#">
+                        <img src="http://www.gravatar.com/avatar/e70aa173a95f239ee3aa4768b441cb83/?default=&s=100" alt=""/>
+                    </a>
+                </div>
+
+                <div class="summary">
+                    <h4>Bebek bölgesinde at bakacak biri arıyorum</h4>
+                    <p>12 Eylül ve 16 Eylül tarihleri arasında günlük 100TL vereceğim.</p>
+                    <a href="#">@yalniz_kovboy</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="action-row">
+            <a href="#" class="large-button">Yeni İlan Gönder</a>
+        </div>
+{% endblock %}

@@ -1,0 +1,123 @@
+#container {
+    width: 870px;
+    margin: auto;
+}
+
+header {
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+header #logo {
+    text-align: center;
+}
+
+p {
+    font-size: 30px;
+    color: #4d4d4d;
+}
+
+
+.content {
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.content h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3d3f3e;
+    font-weight: normal;
+}
+
+.content h3 a {
+    color: #fff252;
+    text-decoration: none;
+}
+
+form select  {
+    -webkit-appearance: menulist-button;
+    /*display: none;*/
+    color: #4d4d4d;
+    font-size: 25px;
+    padding: 3px;
+}
+
+form p i {
+    font-style: normal;
+    letter-spacing: -1px;
+    color: #150f00;
+    border-bottom: 1px dotted #d8d8d8;
+}
+
+form input[type='text'] {
+    width: 170px;
+    font-size: 26px;
+}
+
+form input[type='submit'] {
+    background-color: #fff252;
+    color: #181818;
+    border: none;
+    cursor: pointer;
+    padding: 10px 30px;
+}
+
+#request-list {
+    border-top: 3px solid #fff252;
+    border-bottom: 3px solid #fff252;
+    padding-top: 20px;
+}
+
+#request-list .request-item {
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+#request-list .request-item:last-child {
+}
+
+#request-list .request-item .profile {
+    float: left;
+    width: 130px;
+}
+
+#request-list .request-item .profile img {
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+#request-list .request-item h4 {
+    font-size: 27px;
+    margin: 0;
+    padding: 0;
+}
+
+#request-list .request-item p {
+    margin: 0;
+    padding: 2px 0;
+    font-size: 20px;
+}
+
+#request-list .request-item a {
+    color: gray;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+.action-row {
+    text-align: center;
+    padding: 60px 20px 100px;
+}
+
+.large-button {
+    font-size: 35px;
+    background-color: #fff252;
+    color: #353535;
+    text-decoration: none;
+    padding: 20px 30px;
+    letter-spacing: -2px;
+}
