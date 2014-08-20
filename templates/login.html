@@ -9,10 +9,6 @@
 <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
 
-    {% if error %}
-    <p>Kullanici adi veya sifreniz yanlis.</p>
-    {% endif %}
-
     {{ form.as_p }}
 
     <p>
