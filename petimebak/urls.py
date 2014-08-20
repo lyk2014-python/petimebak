@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     url(r'^logout', 'profiles.views.logout', name='logout'),
     url(r'^register', 'profiles.views.register', name='register'),
 
+    url(r'^new', 'adverts.views.new_advert', name='new_advert'),
+
     # url(r'^blog/', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

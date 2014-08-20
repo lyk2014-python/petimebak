@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Advert</title>
+</head>
+<body>
+
+{% if success %}
+    <h2>Ilan basariyla eklendi!</h2>
+{% endif %}
+
+<h3>New Advert</h3>
+<form action="{% url 'new_advert' %}" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <p>
+        <input type="submit" value="Add"/>
+    </p>
+</form>
+
+</body>
+</html>
