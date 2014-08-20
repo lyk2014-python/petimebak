@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load gravatar %}
+
+{% block content %}
+<div id="request-list">
+    <div class="request-item">
+
+        <div class="profile">
+            <a href="#">
+                <img src="https://secure.gravatar.com/avatar/fd067e3b04ea33f7e6e4d4f334133159.jpg?s=100&amp;r=g&amp;d=mm" alt=""/>
+            </a>
+        </div>
+
+        <div class="summary">
+            <h4>bolu'de cekirge bakacak biri arıyorum</h4>
+            <p>20 Ağustos ve 23 Ağustos tarihleri arasında günlük 500 TL vereceğim.</p>
+            <a href="#">@root</a>
+        </div>
+
+    </div>
+
+    <div class="contact">
+        <form action="#" action=".">
+            <h3>İlanın sahibine mesaj gönderin</h3>
+            <textarea name="mesaj" id="id_message" cols="60" rows="6"></textarea>
+            <input type="submit" value="Gönder"/>
+        </form>
+    </div>
+
+    <p class="advert-info">
+        İlan en son 12 mayis tarihinde güncellenmiştir
+    </p>
+{% endblock %}
