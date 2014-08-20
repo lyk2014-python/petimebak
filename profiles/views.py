@@ -1,4 +1,3 @@
-from django.contrib.auth import authenticate
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
@@ -9,26 +8,15 @@ from profiles.forms import LoginForm
 
 def login(request):
     form = LoginForm()
-    error = False
 
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-
-            user = authenticate(username=username,
-                                password=password)
-
-            if not user:
-                error = True
-            else:
-                auth_login(request, user)
-                return redirect(reverse("home"))
+            auth_login(request, form.user)
+            return redirect(reverse("home"))
 
     return render_to_response("login.html", {
         "form": form,
-        "error": error
     }, RequestContext(request))
 
 
