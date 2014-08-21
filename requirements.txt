@@ -1,4 +1,7 @@
 Django==1.6.5
 Markdown==2.4.1
+Pillow==2.5.3
 django-gravatar2==1.1.4
+django-simple-captcha==0.4.2
+six==1.7.3
 wsgiref==0.1.2
