@@ -1,0 +1,4 @@
+Django==1.6.5
+Markdown==2.4.1
+django-gravatar2==1.1.4
+wsgiref==0.1.2
