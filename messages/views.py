@@ -45,6 +45,8 @@ def inbox(request):
         message_count=models.Count("messages")
     ).exclude(
         message_count=0
+    ).order_by(
+        "-date_created"
     )
 
     return render_to_response("inbox.html", {

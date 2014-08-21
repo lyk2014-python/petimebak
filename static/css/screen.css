@@ -171,12 +171,36 @@ footer {
 
 .conversation-item {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     margin-top: 20px;
     padding-top: 20px;
+    padding-bottom: 20px;
     border-bottom: 2px solid yellow;
+    overflow: hidden;
+    min-height: 100px;
 }
 
 .conversation-item p {
-    font-size: 22px;
+    font-size: 21px;
+    margin: 0;
+    padding: 0;
+}
+
+.conversation-item .image {
+    float: left;
+    margin-right: 30px;
+}
+
+.conversation-item .image img {
+    border-radius: 50%;
+}
+
+.conversation-item .conversation-message {
+    margin-top: 10px;
+    float: left;
+}
+
+.conversation-item a {
+    color: gray;
+    text-decoration: none;
 }

@@ -1,14 +1,21 @@
 {% extends "base.html" %}
 
+{% load gravatar %}
+
 {% block content %}
 <h3>Gelen Kutusu</h3>
 
 {% for conversation in conversations %}
     <div class="conversation-item">
-        <strong>{{ conversation.users.all.0.username }} diyorki:</strong>
-        <p>
-            <a href="{% url "conversation_detail" conversation.id %}">{{ conversation.messages.all.0.text }}</a>
-        </p>
+        <div class="image">
+            <img src="{% gravatar_url conversation.users.all.0.email 100 %}" alt=""/>
+        </div>
+        <div class="conversation-message">
+            <strong>{{ conversation.users.all.0.username }} diyorki:</strong>
+            <p>
+                <a href="{% url "conversation_detail" conversation.id %}">{{ conversation.messages.all.0.text }}</a>
+            </p>
+        </div>
     </div>
 {% empty %}
 
