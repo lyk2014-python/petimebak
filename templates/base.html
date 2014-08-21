@@ -28,6 +28,19 @@
 <div id="container">
 
     <header>
+
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                <li>Merhaba {{ user }}</li>
+                <li><a href="{% url "logout" %}">Çıkış yap</a></li>
+                {% else %}
+                <li><a href="{% url "login" %}">Üye Girişi</a></li>
+                <li><a href="{% url "register" %}">Kayıt ol</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
         <div id="logo">
             <a href="{% url "home" %}"><img src="{% static "images/logo.png" %}" /></a>
         </div>
