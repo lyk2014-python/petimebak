@@ -168,3 +168,15 @@ footer {
     padding: 20px;
     margin: 30px 0;
 }
+
+.conversation-item {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-bottom: 2px solid yellow;
+}
+
+.conversation-item p {
+    font-size: 22px;
+}

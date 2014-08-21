@@ -23,8 +23,9 @@
     {% endfor %}
 
         </div>
-
+        {% if user.is_authenticated %}
         <div class="action-row">
             <a href="{% url "new_advert" %}" class="large-button">Yeni İlan Gönder</a>
         </div>
+        {% endif %}
 {% endblock %}

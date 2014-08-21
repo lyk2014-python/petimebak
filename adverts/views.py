@@ -1,4 +1,5 @@
-from django.shortcuts import render_to_response
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from adverts.forms import AdvertCreationForm
 
@@ -16,6 +17,8 @@ def home(request):
         "adverts": adverts
     }, RequestContext(request))
 
+
+@login_required
 def new_advert(request):
     form = AdvertCreationForm()
     success = False
@@ -33,8 +36,10 @@ def new_advert(request):
         "success": success,
     }, RequestContext(request))
 
+
 def detail_advert(request, pk):
-    advert = Advert.objects.get(id=pk)
+    advert = get_object_or_404(Advert, id=pk)
+
     message_sent = request.GET.get("message_sent")
     form = NewMessageForm()
     return render_to_response("detail.html", {

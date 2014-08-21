@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Gelen Kutusu</h3>
+
+{% for message in messages %}
+<div class="conversation-item">
+    <strong>{{ message.sender.username }}:</strong>
+    <p>{{ message.text }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

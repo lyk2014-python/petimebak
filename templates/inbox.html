@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Gelen Kutusu</h3>
+
+{% for conversation in conversations %}
+    <div class="conversation-item">
+        <strong>{{ conversation.users.all.0.username }} diyorki:</strong>
+        <p>
+            <a href="{% url "conversation_detail" conversation.id %}">{{ conversation.messages.all.0.text }}</a>
+        </p>
+    </div>
+{% empty %}
+
+    Hiç yeni mesajınız yok.
+
+{% endfor %}
+
+{% endblock %}
