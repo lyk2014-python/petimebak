@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Logout</title>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block content %}
 <h3>Logout</h3>
 
 Başarıyla sistemden çıkış yaptınız.
@@ -12,6 +8,4 @@ Başarıyla sistemden çıkış yaptınız.
 <br/>
 
 <a href="{% url "home" %}">Anasayfaya dön</a>
-
-</body>
-</html>
+{% endblock %}

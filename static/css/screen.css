@@ -1,10 +1,15 @@
 #container {
-    width: 870px;
+    width: 700px;
     margin: auto;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 header {
-    margin-top: 40px;
+    margin-top: 0;
     overflow: hidden;
 }
 
@@ -20,7 +25,7 @@ p {
 
 .content {
     margin-top: 40px;
-    margin-left: 30px;
+
 }
 
 .content h3 {
@@ -49,9 +54,23 @@ form p i {
     border-bottom: 1px dotted #d8d8d8;
 }
 
-form input[type='text'] {
+form input[type='text'],
+form input[type='password']{
     width: 170px;
     font-size: 26px;
+}
+
+form label {
+    width: 200px;
+    display: inline-block;
+}
+
+form .helptext {
+    font-size: 20px;
+    color: gray;
+    display: block;
+    padding-bottom: 10px;
+    margin-left: 210px;
 }
 
 form input[type='submit'] {
@@ -81,6 +100,7 @@ form input[type='submit'] {
 #request-list .request-item .profile {
     float: left;
     width: 130px;
+    height: 140px;
 }
 
 #request-list .request-item .profile img {
@@ -157,7 +177,8 @@ form input[type='submit'] {
 }
 
 footer {
-    padding: 20px;
+    padding: 20px 0;
+    margin-top: 10px;
     color: gray;
 }
 
@@ -203,4 +224,33 @@ footer {
 .conversation-item a {
     color: gray;
     text-decoration: none;
+}
+
+nav {
+
+}
+
+nav ul {
+    background: #fff252;
+    padding: 0;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+nav ul li {
+    padding: 8px 20px;
+    float: right;
+    color: #393939;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+nav ul li.welcome {
+    float: left;
 }
