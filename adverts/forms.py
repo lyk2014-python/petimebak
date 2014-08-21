@@ -1,9 +1,9 @@
 from django import forms
 from adverts.models import Advert
-from captcha.fields import CaptchaField
+#from captcha.fields import CaptchaField
 
 class AdvertCreationForm(forms.ModelForm):
-    captcha = CaptchaField()
+    #captcha = CaptchaField()
     class Meta:
         fields = ['pet_type', 'start_date',
                   'end_date', 'region', 'price']
