@@ -141,7 +141,7 @@ form input[type='submit'] {
     margin-top: 74px;
 }
 
-#id_message {
+#id_text {
     width: 580px;
     height: 100px;
     padding: 10px;
@@ -159,4 +159,12 @@ form input[type='submit'] {
 footer {
     padding: 20px;
     color: gray;
+}
+
+.success-message {
+    background-color: #c3c9c6;
+    font-size: 30px;
+    color: #262626;
+    padding: 20px;
+    margin: 30px 0;
 }

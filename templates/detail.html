@@ -2,6 +2,13 @@
 {% load gravatar %}
 
 {% block content %}
+
+{% if message_sent %}
+<div class="success-message">
+    Mesaj başarıyla gönderildi.
+</div>
+{% endif %}
+
 <div id="request-list">
     <div class="request-item">
 
@@ -20,9 +27,10 @@
     </div>
 
     <div class="contact">
-        <form action="#" action=".">
+        <form action="{% url "new_message" advert.id %}" method="post">
+            {% csrf_token %}
             <h3>İlanın sahibine mesaj gönderin</h3>
-            <textarea name="mesaj" id="id_message" cols="60" rows="6"></textarea>
+            {{ form.text }}
             <input type="submit" value="Gönder"/>
         </form>
     </div>

@@ -3,6 +3,7 @@ from django.template import RequestContext
 from adverts.forms import AdvertCreationForm
 
 from adverts.models import Advert
+from messages.forms import NewMessageForm
 
 
 def home(request):
@@ -34,6 +35,10 @@ def new_advert(request):
 
 def detail_advert(request, pk):
     advert = Advert.objects.get(id=pk)
+    message_sent = request.GET.get("message_sent")
+    form = NewMessageForm()
     return render_to_response("detail.html", {
         "advert": advert,
+        "form": form,
+        "message_sent": message_sent
     }, RequestContext(request))

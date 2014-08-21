@@ -17,7 +17,7 @@ class Conversation(models.Model):
         verbose_name_plural = "Sohbetler"
 
 class Message(models.Model):
-    conversation = models.ForeignKey('Conversation')
+    conversation = models.ForeignKey('Conversation', related_name="messages")
     sender = models.ForeignKey(User, related_name="sent_messages")
     date_sent = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
