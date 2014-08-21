@@ -8,12 +8,12 @@
 {% for conversation in conversations %}
     <div class="conversation-item">
         <div class="image">
-            <img src="{% gravatar_url conversation.users.all.0.email 100 %}" alt=""/>
+            <img src="{% gravatar_url conversation.messages.last.sender.email 100 %}" alt=""/>
         </div>
         <div class="conversation-message">
-            <strong>{{ conversation.users.all.0.username }} diyorki:</strong>
+            <strong>{{ conversation.messages.last.sender.username }} diyorki:</strong>
             <p>
-                <a href="{% url "conversation_detail" conversation.id %}">{{ conversation.messages.all.0.text }}</a>
+                <a href="{% url "conversation_detail" conversation.id %}">{{ conversation.messages.last.text }}</a>
             </p>
         </div>
     </div>

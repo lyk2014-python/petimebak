@@ -61,7 +61,31 @@ def conversation_detail(request, pk):
 
     messages = conversation.messages.all()
 
+    form = NewMessageForm()
+
+    if request.method == "POST":
+        form = NewMessageForm(request.POST)
+        if form.is_valid():
+            message = form.cleaned_data.get("text")
+
+            conversation.messages.create(
+                sender=request.user,
+                text=message)
+
+            form = NewMessageForm()
+
+    # mark as seen current messages
+    unread_messages = Message.objects.filter(
+        conversation=conversation
+    ).exclude(
+        seen_users=request.user
+    )
+
+    for message in unread_messages:
+        message.seen_users.add(request.user)
+
     return render_to_response("conversation_detail.html", {
         "conversation": conversation,
-        "messages": messages
+        "messages": messages,
+        "form": form
     }, RequestContext(request))

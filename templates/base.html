@@ -33,7 +33,7 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li>Merhaba {{ user }}</li>
-                <li><a href="{% url "inbox" %}">Mesajlar</a></li>
+                <li><a href="{% url "inbox" %}">Mesajlar</a> ({{ message_count }})</li>
                 <li><a href="{% url "logout" %}">Çıkış yap</a></li>
                 {% else %}
                 <li><a href="{% url "login" %}">Üye Girişi</a></li>

@@ -8,13 +8,14 @@ class Conversation(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     advert = models.ForeignKey(Advert)
 
+    class Meta:
+        verbose_name = "Sohbet"
+        verbose_name_plural = "Sohbetler"
+
     def __unicode__(self):
         username_list = self.users.values_list("username", flat=True)
         return smart_unicode('Conversation: %s' % ','.join(username_list))
 
-    class Meta:
-        verbose_name = "Sohbet"
-        verbose_name_plural = "Sohbetler"
 
 class Message(models.Model):
     conversation = models.ForeignKey('Conversation', related_name="messages")
