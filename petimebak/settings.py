@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django_gravatar',
     'adverts',
     'profiles',
+    'messages',
 )
 
 MIDDLEWARE_CLASSES = (

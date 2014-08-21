@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>New Advert</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 {% if success %}
     <h2>Ilan basariyla eklendi!</h2>
@@ -19,6 +16,4 @@
         <input type="submit" value="Add"/>
     </p>
 </form>
-
-</body>
-</html>
+{% endblock %}
