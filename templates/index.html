@@ -14,7 +14,7 @@
             </div>
 
             <div class="summary">
-                <h4><a href="{% url "detail_advert" advert.id %}" >{{ advert.region }}'de {{ advert.pet_type.name }} bakacak biri arıyorum</a></h4>
+                <h4><a href="{% url "detail_advert" advert.id %}" >{{ advert.region }} bölgesinde {{ advert.pet_type.name }} bakacak biri arıyorum</a></h4>
                 <p>{{ advert.start_date|date:"j F" }} ve {{ advert.end_date|date:"j F" }} tarihleri arasında günlük {{ advert.price }} TL vereceğim.</p>
                 <a href="#">@{{ advert.user.username }}</a>
             </div>
