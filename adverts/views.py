@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404, redirect
@@ -11,7 +12,7 @@ from messages.forms import NewMessageForm
 def home(request):
 
     adverts = (Advert.objects
-                .filter(is_published=True)
+                .filter(is_published=True, end_date__gte=datetime.now())
                 .order_by("-date_created"))
 
     return render_to_response("index.html", {
