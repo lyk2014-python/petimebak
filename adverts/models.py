@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.encoding import smart_unicode
+from django.core.exceptions import ValidationError
 
 
 class PetType(models.Model):
@@ -15,13 +16,18 @@ class PetType(models.Model):
         verbose_name_plural = "Pet Tipleri"
 
 
+def validate_positive(value):
+    if value < 0.01:
+        raise ValidationError(u'pozitif değer girin')
+
+
 class Advert(models.Model):
     region = models.CharField(max_length=255)
     pet_type = models.ForeignKey("PetType")
     user = models.ForeignKey(User)
     start_date = models.DateField()
     end_date = models.DateField()
-    price = models.DecimalField(decimal_places=2, max_digits=5)
+    price = models.DecimalField(decimal_places=2, max_digits=5, validators=[validate_positive])
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)
