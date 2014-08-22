@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Yeni Fotoğraf</h3>
+<form action="{% url 'photo_add' advert.id %}"
+      method="post"
+      enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Add"/></p>
+</form>
+{% endblock %}

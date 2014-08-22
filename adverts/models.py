@@ -14,6 +14,7 @@ class PetType(models.Model):
         verbose_name = "Pet Tipi"
         verbose_name_plural = "Pet Tipleri"
 
+
 class Advert(models.Model):
     region = models.CharField(max_length=255)
     pet_type = models.ForeignKey("PetType")
@@ -31,3 +32,13 @@ class Advert(models.Model):
     class Meta:
         verbose_name = "İlan"
         verbose_name_plural = "İlanlar"
+
+
+class AdvertImage(models.Model):
+    advert = models.ForeignKey("Advert", related_name="images")
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="adverts")
+
+    class Meta:
+        verbose_name = "İlan Fotoğrafı"
+        verbose_name_plural = "İlan Fotoğrafları"

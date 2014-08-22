@@ -55,7 +55,8 @@ form p i {
 }
 
 form input[type='text'],
-form input[type='password']{
+form input[type='password'],
+form input[type='file'] {
     width: 170px;
     font-size: 26px;
 }
@@ -253,4 +254,13 @@ nav ul li a {
 
 nav ul li.welcome {
     float: left;
+}
+
+.advert-images {
+    overflow: hidden;
+}
+
+.advert-images li {
+    float: left;
+    list-style: none;
 }

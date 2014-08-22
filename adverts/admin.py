@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from adverts.models import Advert, PetType
+from adverts.models import Advert, PetType, AdvertImage
+
 
 class AdvertAdmin(admin.ModelAdmin):
     list_display = ('user', 'region',
@@ -19,4 +20,5 @@ class PetTypeAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Advert, AdvertAdmin)
+admin.site.register(AdvertImage)
 admin.site.register(PetType, PetTypeAdmin)

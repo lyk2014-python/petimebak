@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render_to_response, get_object_or_404
+from django.core.urlresolvers import reverse
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
-from adverts.forms import AdvertCreationForm
+from adverts.forms import AdvertCreationForm, PhotoCreationForm
 
 from adverts.models import Advert
 from messages.forms import NewMessageForm
@@ -46,4 +47,22 @@ def detail_advert(request, pk):
         "advert": advert,
         "form": form,
         "message_sent": message_sent
+    }, RequestContext(request))
+
+
+def photo_add(request, pk):
+    advert = get_object_or_404(Advert, id=pk)
+    form = PhotoCreationForm()
+
+    if request.method == "POST":
+        form = PhotoCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.instance.advert = advert
+            form.save()
+
+            return redirect(reverse('detail_advert', args=[pk]))
+
+    return render_to_response("photo_add.html", {
+        "advert": advert,
+        "form": form,
     }, RequestContext(request))

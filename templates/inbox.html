@@ -13,7 +13,7 @@
         <div class="conversation-message">
             <strong>{{ conversation.messages.last.sender.username }} diyorki:</strong>
             <p>
-                <a href="{% url "conversation_detail" conversation.id %}">{{ conversation.messages.last.text }}</a>
+                <a href="{% url "conversation_detail" conversation.id %}">{{ conversation.messages.last.text|truncatechars:50 }}</a>
             </p>
         </div>
     </div>
