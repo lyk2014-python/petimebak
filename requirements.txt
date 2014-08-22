@@ -5,3 +5,4 @@ wsgiref==0.1.2
 pillow
 dj_database_url
 psycopg2
+gunicorn
