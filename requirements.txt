@@ -3,6 +3,8 @@ Markdown==2.4.1
 django-gravatar2==1.1.4
 wsgiref==0.1.2
 pillow
-dj_database_url
+dj-database-url
 psycopg2
 gunicorn
+dj-static
+static
