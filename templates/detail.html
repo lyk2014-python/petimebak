@@ -53,6 +53,6 @@
     {% endif %}
 
     <p class="advert-info">
-        İlan en son 12 mayis tarihinde güncellenmiştir
+    İlan en son {{ advert.date_modified|date:"j F" }} tarihinde güncellenmiştir
     </p>
 {% endblock %}
