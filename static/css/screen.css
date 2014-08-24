@@ -160,7 +160,7 @@ form input[type='submit'] {
 
 .contact input[type='submit'] {
     font-size: 24px;
-    margin-top: 74px;
+    margin-top: 14px;
 }
 
 #id_text {
@@ -264,4 +264,8 @@ nav ul li.welcome {
 .advert-images li {
     float: left;
     list-style: none;
+}
+
+.photos h3 {
+    margin-left: 11px;
 }
